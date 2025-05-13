@@ -1,0 +1,99 @@
+/* App.css */
+.navbar {
+  background-color: #3498db;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.filterButtons {
+  display: flex;
+}
+
+.filterButton {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.filterButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.searchContainer {
+  display: flex;
+}
+
+.searchInput {
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  margin-right: 8px;
+}
+
+.searchButton {
+  background-color: #fff;
+  color: #3498db;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.container {
+  padding: 16px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 16px;
+}
+
+.newsTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.newsDescription {
+  font-size: 16px;
+}
+
+.readMoreButton {
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.readMoreButton:hover {
+  background-color: #2980b9;
+}
+
+

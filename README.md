@@ -21,26 +21,6 @@ This app fetches and displays news dynamically and provides a clean, user-friend
 - ✅ Built using functional React components and hooks (`useState`, `useEffect`).
 - ✅ Styled with CSS or a UI library (e.g., Bootstrap, TailwindCSS).
 
----
-
-## 📁 Project Structure
-
-
-newsapp/
-│
-├── public/                # Static assets
-├── src/
-│   ├── components/        # Reusable components like Navbar, NewsCard, Filters
-│   ├── pages/             # Pages or views if routing is used
-│   ├── App.js             # Main application component
-│   ├── index.js           # Entry point for React
-│   ├── api.js             # API functions to fetch news
-│   └── styles/            # CSS or styling folder
-├── .gitignore
-├── package.json
-├── README.md              # Project documentation
-└── ...
-
 *How to run application*
 cd news_app
 npm install

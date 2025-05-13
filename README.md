@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# 📰 NewsApp - React.js News Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 📌 Overview
 
-## Available Scripts
+**NewsApp** is a modern single-page application built with **React.js** that displays the latest news articles. It offers intuitive features like:
 
-In the project directory, you can run:
+- 🔍 **Search functionality** – find news articles based on keywords.
+- 🗂️ **Category filters** – filter news by category like sports, technology, entertainment, health, etc.
+- 🌐 **Responsive UI** – supports both desktop and mobile views.
 
-### `npm start`
+This app fetches and displays news dynamically and provides a clean, user-friendly interface to stay updated with current events.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Features
 
-### `npm test`
+- ✅ Browse the latest news headlines.
+- ✅ Search for articles by keyword or title.
+- ✅ Filter news by categories (e.g., Business, Technology, Sports).
+- ✅ Responsive design for all devices.
+- ✅ Built using functional React components and hooks (`useState`, `useEffect`).
+- ✅ Styled with CSS or a UI library (e.g., Bootstrap, TailwindCSS).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📁 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+newsapp/
+│
+├── public/                # Static assets
+├── src/
+│   ├── components/        # Reusable components like Navbar, NewsCard, Filters
+│   ├── pages/             # Pages or views if routing is used
+│   ├── App.js             # Main application component
+│   ├── index.js           # Entry point for React
+│   ├── api.js             # API functions to fetch news
+│   └── styles/            # CSS or styling folder
+├── .gitignore
+├── package.json
+├── README.md              # Project documentation
+└── ...
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*How to run application*
+cd news_app
+npm install
+npm start

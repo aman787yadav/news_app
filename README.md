@@ -11,7 +11,6 @@
 This app fetches and displays news dynamically and provides a clean, user-friendly interface to stay updated with current events.
 
 ---
-
 ## 🚀 Features
 
 - ✅ Browse the latest news headlines.

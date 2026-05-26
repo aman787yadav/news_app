@@ -6,6 +6,8 @@ const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [newsData, setNewsData] = useState([]);
   const [category, setCategory] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 12;
 
   useEffect(() => {
     fetchNewsData('India');
@@ -13,20 +15,22 @@ const App = () => {
 
   const fetchNewsData = async (query) => {
     try {
-      let apiUrl = `https://newsapi.org/v2/everything?q=${query}&apiKey=e2f7bbb941fb44488535aa9f780b9609`;
+      let apiUrl = `https://newsapi.org/v2/everything?q=${query}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
       if (category) {
         apiUrl += `&category=${category}`;
       }
       console.log('API URL:', apiUrl); // Log the API request URL
       const response = await fetch(apiUrl);
       const data = await response.json();
-      setNewsData(data.articles);
+      setNewsData(data.articles || []);
+      setCurrentPage(1);
     } catch (error) {
       console.error('Error fetching news:', error);
     }
   };
 
   const handleSearch = () => {
+    if (!searchQuery.trim()) return;
     fetchNewsData(searchQuery);
   };
 
@@ -35,9 +39,13 @@ const App = () => {
   };
 
   const handleFilter = (category) => {
-    
     fetchNewsData(category);
   };
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = newsData ? newsData.slice(indexOfFirstItem, indexOfLastItem) : [];
+  const totalPages = newsData ? Math.ceil(newsData.length / itemsPerPage) : 0;
 
   return (
     <div>
@@ -65,10 +73,15 @@ const App = () => {
       </nav>
       <div className="container">
         <ul>
-          {newsData.map((item) => (
+          {currentItems.map((item) => (
             <li key={item.title}>
               <div className="card">
-                <img src={item.urlToImage} className="cardImage" alt={item.title} />
+                <img 
+                  src={item.urlToImage || 'https://placehold.co/400x220/f0f7ff/0056b3?text=No+Image'} 
+                  className="cardImage" 
+                  alt={item.title} 
+                  onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x220/f0f7ff/0056b3?text=No+Image'; }}
+                />
                 <div className="cardContent">
                   <h2 className="newsTitle">{item.title}</h2>
                   <p className="newsDescription">{item.description}</p>
@@ -80,6 +93,27 @@ const App = () => {
             </li>
           ))}
         </ul>
+        {totalPages > 1 && (
+          <div className="pagination">
+            <button 
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))} 
+              disabled={currentPage === 1}
+              className="pageButton"
+            >
+              Previous
+            </button>
+            <span className="pageInfo">
+              Page {currentPage} of {totalPages}
+            </span>
+            <button 
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))} 
+              disabled={currentPage === totalPages}
+              className="pageButton"
+            >
+              Next
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

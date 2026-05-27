@@ -5,12 +5,13 @@ import './App.css';
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [newsData, setNewsData] = useState([]);
-  const [category, setCategory] = useState('');
+  const [category] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
 
   useEffect(() => {
     fetchNewsData('India');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchNewsData = async (query) => {

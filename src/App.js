@@ -16,7 +16,7 @@ const App = () => {
 
   const fetchNewsData = async (query) => {
     try {
-      let apiUrl = `https://gnews.io/api/v4/search?q=${query}&lang=en&apikey=${process.env.REACT_APP_NEWS_API_KEY}`;
+      let apiUrl = `/api/news?q=${query}`;
 
       console.log('API URL:', apiUrl); // Log the API request URL
       const response = await fetch(apiUrl);

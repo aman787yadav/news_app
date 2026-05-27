@@ -5,7 +5,7 @@ import './App.css';
 const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [newsData, setNewsData] = useState([]);
-  const [category] = useState('');
+
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
 
@@ -16,10 +16,8 @@ const App = () => {
 
   const fetchNewsData = async (query) => {
     try {
-      let apiUrl = `https://newsapi.org/v2/everything?q=${query}&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
-      if (category) {
-        apiUrl += `&category=${category}`;
-      }
+      let apiUrl = `https://gnews.io/api/v4/search?q=${query}&lang=en&apikey=${process.env.REACT_APP_NEWS_API_KEY}`;
+
       console.log('API URL:', apiUrl); // Log the API request URL
       const response = await fetch(apiUrl);
       const data = await response.json();
@@ -78,7 +76,7 @@ const App = () => {
             <li key={item.title}>
               <div className="card">
                 <img 
-                  src={item.urlToImage || 'https://placehold.co/400x220/f0f7ff/0056b3?text=No+Image'} 
+                  src={item.image || 'https://placehold.co/400x220/f0f7ff/0056b3?text=No+Image'} 
                   className="cardImage" 
                   alt={item.title} 
                   onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x220/f0f7ff/0056b3?text=No+Image'; }}
